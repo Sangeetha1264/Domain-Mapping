@@ -1,3 +1,99 @@
+
+<style>
+    select {
+        width: 400px;
+        height: 30px; 
+        font-size: 16px; 
+        padding: 5px; 
+        margin-bottom: 20px;
+    }
+
+    .div-1 {
+        background-color: hwb(0 91% 5%);
+        padding-top: 20px; 
+        padding-bottom: 20px; 
+    }
+
+    .div-1 ol {
+        margin-top: 20px; 
+        margin-bottom: 20px; 
+    }
+
+    .div-1 ol li {
+        margin-bottom: 30px; 
+    }
+
+    .div-2 {
+        margin-top: 20px; 
+    }
+
+    .blue-button {
+        background-color: rgb(252, 252, 252);
+        color: rgb(28, 41, 233);
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        width: 200px;
+        border: 2px solid rgb(13, 20, 224);
+        border-radius: 5px;
+
+    }
+    .white-button {
+        background-color: blue;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        width: 200px;
+        border-radius: 5px;
+    }
+
+    
+    table.custom-table {
+        width: 35%; 
+        height: 100px; 
+        border-collapse: collapse; 
+    }
+
+    table.custom-table td {
+        height: 50px; 
+        border: 1px solid black; 
+    }
+    table.custom-table tr:first-child td {
+        background-color: blue;
+        text-align: center; 
+        color: white; 
+    }
+
+
+    .copy-icon {
+        cursor: pointer;
+        margin-left: 10px;
+        color: #007BFF; 
+        font-size: 18px;
+        text-decoration: none;
+    }
+
+    .copy-icon:hover {
+        color: #0056b3; 
+
+    .copy-icon {
+        cursor: pointer;
+        margin-left: 10px;
+        color: #007BFF; 
+        font-size: 18px;
+        display: inline-block;
+    }
+
+    .copy-icon:hover {
+        color: #0056b3; 
+    }
+</style>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +102,67 @@
     <title>Hello World</title>
 </head>
 <body>
-    <h1>Hello, World!</h1>
+    <h3 style="margin-bottom: 50px;">Domain Verification - sharaa.store ✏️</h3>
+    <p>For securiety reasons,you need to verify your owership of 'sharaa.store'.You can verify this by one of the following methods.Please note that it won't affect your existing email/domain</p>
+
+
+    <select name="fruits" id="fruits-dropdown">
+        <option value="apple">Add TXT record in the DNS (Recomanded)</option>
+        <option value="banana">Banana</option>
+        <option value="cherry">Cherry</option>
+        <option value="date">Date</option>
+    </select>
+
+    <div class="div-1"> 
+        <ol>
+            <li>We have identified that your domain manager is 'DigitalOcean'.Login to your 'DigitalOcean'DNS account.</li>
+            <li>Now,add a new TXT record, and pastethe below TXT value into the DNS configuration.Click here for detailed instructions.</li>
+
+            <table class="custom-table">
+                <tr>
+                    <td>TXT Name / Host</td>
+                    <td>TxT Value / Content</td>
+                </tr>
+                <tr>
+                    <td>@ (or) Leave it blank</td>
+                    <td>
+                        <span id="txtValue">zoho-verification=zb91676995.zmverify.zoho.in</span>
+                        <span class="copy-icon" onclick="copyText()">▢</span> 
+                    </td>
+                </tr>
+            </table>
+            <li>You may have to wait for 30 minutes to 1day for this change to propagate,depending on the TTL value that you've entered.</li>
+            <li>Finally, come back to this page and click on the below button to complete the domain verification process.</li>
+        </ol>
+         </div>
+         <div class="div-2"> 
+       
+         <button class="white-button">Verify TXT Record</button>
+
+         <button class="blue-button">Share instructions</button>
+         </div>
 </body>
 </html>
+
+<script>
+    function copyText() {
+       
+        var textToCopy = document.getElementById("txtValue").innerText;
+
+        var tempInput = document.createElement("textarea");
+        document.body.appendChild(tempInput);
+
+        tempInput.value = textToCopy;
+
+       
+        tempInput.select();
+        tempInput.setSelectionRange(0, 99999); 
+
+      
+        document.execCommand("copy");
+
+        document.body.removeChild(tempInput);
+        
+    }
+</script>
+
